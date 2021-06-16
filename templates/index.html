@@ -3,20 +3,169 @@
 {% block content %}
 
 <div class="container-fluid">
-    <img class="img" src="{{ url_for('static', filename='img/VIT.jpg') }}"h>
+    <img class="img" src="{{ url_for('static', filename='img/VIT.jpg') }}">
     <div class="container-fluid centered text-center">
         <div class="text-white">
             <h1 style="font-size: 80px;">College System Management</h1>
             <h5 class="my-5" style="font-size: 30px;">One stop for all your details.</h5>
         </div>
         <center>
-            <a class="btn btn-primary px-5 py-3 rounded-pill mt-5" href="/discover">Let's Go</a>
+            <a class="btn btn-primary px-5 py-3 rounded-pill mt-4" id="letsgo">Let's Go</a>
         </center>
     </div>
 </div>
 
-<div>
-    
-</div>
+<section class="about">
+    <div class="row">
+        <div class="col-7 px-5">
+            <h1>About Us</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu ultrices massa. 
+                Fusce quis magna at dolor faucibus blandit. Phasellus convallis finibus pulvinar. 
+                Nulla congue dui nec vulputate ullamcorper. Nam pellentesque lorem eget dolor pretium, 
+                eget tincidunt enim fermentum. Integer et euismod velit. In quis luctus ex, et dapibus 
+                metus. Nam vitae ex tempor, elementum massa ultricies, tincidunt ligula. Phasellus 
+                pulvinar sem ut purus vestibulum, volutpat ultrices orci consectetur. In vestibulum 
+                tristique semper. Morbi et purus id augue sagittis faucibus. Nulla facilisi. Morbi sed 
+                leo est. In dui tellus, fermentum id sapien in, suscipit luctus quam. Integer vestibulum 
+                nibh vitae semper dictum.
+            </p>
+        </div>
+        <div class="col-5">
+            <img class="img1" src="{{ url_for('static', filename='img/about.jpg') }}">
+        </div>
+    </div>
+</section>
+<hr class="hr">
+<section class="about" style="margin-top: 5rem;" id="here">
+    <h3 class="text-center">WHAT ARE YOU LOOKING FOR ?</h3>
+    <div class="row mt-5">
+        <div class="col">
+            <div class="card">
+                <img src="{{ url_for('static', filename='img/student.png') }}" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">STUDENT</h5>
+                  <a href="{{ url_for('student') }}" class="btn btn-primary" target="_blank">Click HERE</a>
+                </div>
+              </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='img/faculty.png') }}" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">FACULTY</h5>
+                  <a href="{{ url_for('faculty') }}" class="btn btn-primary" target="_blank">Click HERE</a>
+                </div>
+              </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='img/courses.png') }}" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">COURSES</h5>
+                  <a href="#" class="btn btn-primary" target="_blank">Click HERE</a>
+                </div>
+              </div>
+        </div>
+    </div>
+</section>
+<hr class="hr">
+<section class="about" id="sign">
+    <h3 class="mb-5 text-center"><strong>SIGN-UP</strong></h3>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <form action="{{ url_for('sign_up') }}" method="POST" style="text-align: center;">
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline" style="color: white;">
+                                <input type="text" class="form-control" placeholder="First Name" name="f_name" style="background-color: white;">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" class="form-control" placeholder="Last Name" name="l_name" style="background-color: white;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-outline my-5">
+                        <input type="email" class="form-control" placeholder="Email" name="email" style="background-color: white;">
+                    </div>
+                    <div class="form-outline my-5">
+                        <input type="text" class="form-control" placeholder="Username" name="username" style="background-color: white;">
+                    </div>
+                    <div class="form-outline my-5">
+                        <input type="password" class="form-control" placeholder="Password" name="password" style="background-color: white;">
+                    </div>
+                    <div>
+                        <input type="submit" class="btn btn-primary btn-block mb-4" value="Sign Up">
+                    </div>
+                </form>
+            </div>
+        </div>
+</section>
+{% if f_name %}
+    <script>
+        var x = document.getElementById("sign");
+        x.style.display = "None";
+    </script>
+    <section class="about">
+        <h2 class="mb-5 text-center"><strong>THANK YOU {{f_name}} {{l_name}} for signing up for CMS.</strong></h3>
+    </section>
+{% endif %}
+
+
+<hr class="hr">
+<section class="my-5">
+    <h1 class="text-center display-3"><strong>Meet the TEAM</strong></h1>
+    <div class="row" style="margin-top: 4rem;">
+        <div class="col">
+          <div class="card">
+            <img src="{{ url_for('static', filename='img/student.png') }}" style="width:100%">
+            <div class="container">
+              <h2>Pallav Agarwal</h2>
+              <p class="title">20BCE0000</p>
+              <p>example@example.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="{{ url_for('static', filename='img/ProfilePic.jpg') }}" style="width:100%">
+            <div class="container">
+              <h2>Ritwik Singh</h2>
+              <p class="title">20BCE1053</p>
+              <p>example@example.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="{{ url_for('static', filename='img/student.png') }}" style="width:100%">
+            <div class="container">
+              <h3>Abhyudaya Jindal</h3>
+              <p class="title">20BCE0000</p>
+              <p>example@example.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card">
+              <img src="{{ url_for('static', filename='img/student.png') }}" style="width:100%">
+              <div class="container">
+                <h2>Deepak Kumar</h2>
+                <p class="title">20BCE0000</p>
+                <p>example@example.com</p>
+              </div>
+            </div>
+        </div>
+    </div>  
+</section>
+
+<script>
+    $('#letsgo').click(function () { 
+        $('html,body').animate({
+            scrollTop : $('#here').offset().top},
+            'slow');
+    });
+</script>
 
 {% endblock content %}

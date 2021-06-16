@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Sno</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Username</th>
+        <th scope="col">Password</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for cms in allcms %}
+        <tr>
+            <th scope="row">{{cms.sno}}</th>
+            <td>{{cms.f_name}}</td>
+            <td>{{cms.l_name}}</td>
+            <td>{{cms.email}}</td>
+            <td>{{cms.username}}</td>
+            <td>{{cms.password}}</td>
+          </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock content %}
