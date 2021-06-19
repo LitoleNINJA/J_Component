@@ -29,6 +29,12 @@
     </section>
 
 <hr class="hr">    
+{% if faculty %}
+    <div>
+        <h2 class="text-center">{{faculty.reg_no}} {{faculty.name}} has been DELETED !</h2>
+    </div>
+    <hr class="hr">
+{% endif %}
 <section class="about">
     <h2 class="text-center">Search for Faculty to Delete</h2>
     <form action="{{ url_for('faculty_edit') }}" method="POST" style="margin: 0 18rem;">
@@ -40,11 +46,6 @@
         </div>
     </form>
 </section>
-{% if faculty %}
-<hr class="hr">
-    <div>
-        <h2 class="text-center">{{faculty.reg_no}} {{faculty.name}} has been DELETED !</h2>
-    </div>
-{% endif %}
+
 
 {% endblock content %}
